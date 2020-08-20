@@ -49,3 +49,50 @@ html, body {
 .layers.on {
     display: inline-block;
 }
+
+.layers input {
+    margin: 5px;
+    vertical-align: middle;
+}
+
+#progress {
+    visibility: hidden;
+    position: relative;
+    float: right;
+    width: 270px;
+    height: 70px;
+    text-align: center;
+    z-index: 5;
+    bottom: 110px;
+    right: 30px;
+    color: white;
+    padding-top: 10px;
+    background-color: #333;
+    font-size: 16px;
+}
+
+#progress.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.6s, fadeout 0.5s 2.6s;
+    animation: fadein 0.6s, fadeout 0.5s 2.6s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 80; opacity: 0;} 
+    to {bottom: 110px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 80; opacity: 0;}
+    to {bottom: 110px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 110px; opacity: 1;} 
+    to {bottom: 80; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 110px; opacity: 1;}
+    to {bottom: 80; opacity: 0;}
+}

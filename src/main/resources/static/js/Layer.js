@@ -2,7 +2,7 @@ var getLayerById = function(layerId) {
     if(layerId) {
         var layers = map.getLayers().getArray();
 
-        for(var i in layers){	 // 브라우저 호환성 - ie6~, chrome
+        for(var i in layers) {
             if(layers[i].get('id') === layerId){
                 layer = layers[i];
                 break;
