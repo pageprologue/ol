@@ -1,11 +1,19 @@
-var osm_layer = new ol.layer.Tile({
-    source: new ol.source.OSM()
+proj4.defs("EPSG:4326","+proj=longlat +datum=WGS84 +no_defs");
+
+var extent = [-180.0, -90.0, 180.0, 90.0];
+var projection = ol.proj.get('EPSG:4326');
+projection.setExtent(extent);
+
+// var center = ol.proj.transform([126.977234, 37.490115], 'EPSG:4326', 'EPSG:3857');
+var view = new ol.View({
+    zoom: 12,
+    maxZoom: 18,
+    center: [126.977234, 37.490115],
+    projection : projection
 });
 
-var center = ol.proj.transform([126.977234, 37.490115], 'EPSG:4326', 'EPSG:3857');
-var view = new ol.View({
-	center: center,
-	zoom: 10
+var osm_layer = new ol.layer.Tile({
+    source: new ol.source.OSM()
 });
 
 var map = new ol.Map({
@@ -13,5 +21,4 @@ var map = new ol.Map({
 	layers: [osm_layer],
 	view: view
 });
-
 
