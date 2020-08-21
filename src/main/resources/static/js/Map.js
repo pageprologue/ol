@@ -1,10 +1,8 @@
 proj4.defs("EPSG:4326","+proj=longlat +datum=WGS84 +no_defs");
-
 var extent = [-180.0, -90.0, 180.0, 90.0];
 var projection = ol.proj.get('EPSG:4326');
 projection.setExtent(extent);
 
-// var center = ol.proj.transform([126.977234, 37.490115], 'EPSG:4326', 'EPSG:3857');
 var view = new ol.View({
     zoom: 12,
     maxZoom: 18,

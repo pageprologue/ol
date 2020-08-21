@@ -27,6 +27,7 @@ html, body {
 }
 .layerBtn:hover {
     background-color:#ebf8fc;
+    cursor: pointer;
 }
 
 .layers {
