@@ -7,9 +7,16 @@ $('.layers input[type=checkbox]').on("change", function(e) {
     }
 });
 
-var geojsonObject;
 
+/**
+ * 광역시도, 시군구, 읍면동 오픈 API 
+ * https://www.data.go.kr/dataset/3046391/openapi.do
+ * 
+ * @param {*} apiType 
+ */
 function getApiData(apiType) {
+    var geojsonObject;
+    
     var url = "http://api.vworld.kr/req/data";
     var param = "";
     var apiKey = "96CC6623-0AAC-3DCF-80E4-40F94A8442F3";
